@@ -6,7 +6,6 @@ function App() {
   const [final, setFinal] = useState(0);
   const [ortalama, setOrtalama] = useState(0);
   const hesapla = () => {
-    debugger;
     setOrtalama(vize * 0.4 + final * 0.6);
     console.log("ORtalama Hesaplandı");
   };
