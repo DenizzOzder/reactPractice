@@ -1,0 +1,17 @@
+.taskWrapper {
+  border: 1px solid white;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 18px;
+}
+.taskWrapper input {
+  width: 100%;
+  height: 32px;
+}
+.taskWrapper button {
+  width: fit-content;
+  border-radius: 8px;
+}
