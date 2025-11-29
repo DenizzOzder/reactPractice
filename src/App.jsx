@@ -13,6 +13,14 @@ function App() {
   const deleteTask = (index) => {
     setTaskList((prev) => prev.filter((_, i) => i !== index));
   };
+
+  const editTask = (index, newContent) => {
+    setTaskList((prev) =>
+      prev.map((item, i) =>
+        i === index ? { ...item, content: newContent } : item
+      )
+    );
+  };
   useEffect(() => {
     if (taskList.length == 0) {
       return console.log("No Task Here");
@@ -22,7 +30,7 @@ function App() {
   return (
     <>
       <TodoCreate onCreateTodo={createTask} />
-      <TodoList task={taskList} deleteTask={deleteTask} />
+      <TodoList task={taskList} deleteTask={deleteTask} editTask={editTask} />
     </>
   );
 }
