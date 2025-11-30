@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-// Starter Valua
+// Starter Value --> STATELER BURADA
 const initialState = {
   value: 0,
 };
 
-// Creating Method
+// Creating Method --> Reducers içerisinde metotları tanımlıyoruz
 export const counterSlice = createSlice({
   name: "counter",
   initialState,
