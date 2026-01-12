@@ -4,7 +4,7 @@ import axios from "axios";
 const initialState = {
   products: [],
   selectedProduct: {},
-  loading: false,
+  loading: true,
 };
 const base_URL = "https://fakestoreapi.com";
 export const getAllProducts = createAsyncThunk("getAllProdducts", async () => {
