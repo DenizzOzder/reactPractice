@@ -3,7 +3,19 @@ import { CiShoppingCart } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import { FaRegMoon } from "react-icons/fa";
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import IconButton from "@mui/material/IconButton";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -3,
+    top: 13,
+    border: `2px solid ${(theme.vars ?? theme).palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
 export default function Header() {
   const [theme, setTheme] = React.useState("light");
   const handleChangeTheme = () => {
@@ -32,8 +44,12 @@ export default function Header() {
           </ul>
         </nav>
         <div className="buttons">
-          <div className="cart">
-            <CiShoppingCart />
+          <div className="cart2">
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={4} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
           </div>
           <div className="user">
             <CiUser />
