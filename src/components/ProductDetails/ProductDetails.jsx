@@ -8,9 +8,6 @@ export default function ProductDetails() {
   const dispatch = useDispatch();
   const { id } = useParams(); // URL'den gelen ID
   const { products, loading } = useSelector((store) => store.products); // Tüm ürünler store'dan alınıyor
-
-  // ID'ye göre ürünü bulma fonksiyonu
-
   useEffect(() => {
     // Eğer ürünler henüz yüklenmediyse, onları getir F5 yapıldığında da çalışır
     if (products.length === 0) {
