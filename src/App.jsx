@@ -1,17 +1,15 @@
-import { Container } from "@mui/material";
 import "./App.css";
-import Header from "./components/Header/Header.jsx";
-import ProductList from "./components/ProductList/ProductList.jsx";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Layout from "./components/Layout/Layout.jsx";
 
 function App() {
   return (
-    <>
-      <Container maxWidth="xl">
-        <Header />
-        <ProductList />
-      </Container>
-    </>
+    <Routes>
+      <Route exact path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
-
 export default App;
