@@ -2,15 +2,16 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/productSlice";
 import "./ProductList.css";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductList() {
   const dispatch = useDispatch();
-  const { products, loading } = useSelector((store) => store.products);
+  const { products } = useSelector((store) => store.products);
 
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getAllProducts());
   }, [dispatch]);
-  loading ? console.log("Loading products...") : console.log(products);
   return (
     <div className="product-list">
       <h2>Product List</h2>
@@ -22,6 +23,14 @@ export default function ProductList() {
             <p>Price: {product.price}₺</p>
             <p>{product.title}</p>
             <p>{product.description}</p>
+            <div>
+              <button
+                className="detail"
+                onClick={() => navigate(`/product-details/${product.id}`)}
+              >
+                Details
+              </button>
+            </div>
           </li>
         ))}
       </ul>
