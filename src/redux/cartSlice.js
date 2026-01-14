@@ -34,6 +34,8 @@ export const cartSlice = createSlice({
         state.cartItems.find((item) => item.id === action.payload.id);
       if (findItem) {
         // Daha önceden eklenmiş
+        findItem.count += action.payload.count;
+        writeToLocalStorage(state.cartItems);
       } else {
         state.cartItems = [...state.cartItems, action.payload];
         writeToLocalStorage(state.cartItems);
