@@ -7,6 +7,8 @@ import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrawer } from "../../redux/cartSlice";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -21,6 +23,9 @@ export default function Header() {
   const handleChangeTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
+  const dispatch = useDispatch();
+
+  const { cartItems } = useSelector((store) => store.cart);
   return (
     <header className={theme}>
       <div className="container">
@@ -45,8 +50,8 @@ export default function Header() {
         </nav>
         <div className="buttons">
           <div className="cart2">
-            <IconButton aria-label="cart">
-              <StyledBadge badgeContent={4} color="secondary">
+            <IconButton aria-label="cart" onClick={() => dispatch(setDrawer())}>
+              <StyledBadge badgeContent={cartItems.length} color="secondary">
                 <ShoppingCartIcon />
               </StyledBadge>
             </IconButton>

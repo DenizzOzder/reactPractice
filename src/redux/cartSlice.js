@@ -13,6 +13,8 @@ const getFromLocalStorage = () => {
 };
 const initialState = {
   cartItems: getFromLocalStorage(),
+  drawer: false,
+  total: 0,
 };
 
 const writeToLocalStorage = (cartItems) => {
@@ -45,12 +47,23 @@ export const cartSlice = createSlice({
       state.cartItems = state.cartItems.filter(
         (item) => item.id !== action.payload.id
       );
+      calculateTotal();
     },
     clearCart: (state) => {
       state.cartItems = [];
+      calculateTotal();
+    },
+    setDrawer: (state) => {
+      state.drawer = !state.drawer;
+    },
+    calculateTotal: (state) => {
+      state.cartItems &&
+        state.cartItems.map((item) => {
+          state.total += item.price * item.count;
+        });
     },
   },
 });
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, setDrawer, calculateTotal } = cartSlice.actions;
 
 export default cartSlice.reducer;
