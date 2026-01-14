@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllProducts } from "../../redux/productSlice";
 import Loading from "../Loading";
+import { addToCart } from "../../redux/cartSlice";
 
 export default function ProductDetails() {
   const dispatch = useDispatch();
@@ -23,9 +24,19 @@ export default function ProductDetails() {
       setCount(count - 1);
     }
   };
-
   const selectedItem = products.find((item) => item.id === parseInt(id));
   const { category, image, price, title, description } = selectedItem || {};
+  const AddCard = () => {
+    const payload = {
+      id,
+      price,
+      title,
+      image,
+      description,
+      count,
+    };
+    dispatch(addToCart(payload));
+  };
 
   if (loading) {
     return <Loading />;
@@ -45,7 +56,7 @@ export default function ProductDetails() {
             {count}
             <span onClick={increment}> + </span>
           </p>
-          <button>Add to Cart</button>
+          <button onClick={AddCard}>Add to Cart</button>
         </div>
       </li>
     </ul>
