@@ -10,24 +10,19 @@ export default function List() {
                 todos.length == 0 ? 
                     (<p> Henüz bir todo eklenmedi </p>)
                 :
-            
             <ul>
                 {todos && todos.map((todo) => (
                     <li key={todo.id}>
-            <p>
-              {todo.text}
-            </p>
-            
+                        <p>
+                        {todo.text}
+                        </p>       
             {/* Silme işlemi için ID gönderiyoruz */}
-            <button onClick={() => dispatch(deleteTodo(todo.id))}>
-              Sil
-            </button>
+                        <button onClick={() => dispatch(deleteTodo(todo.id))}>
+                        Sil
+                        </button>
                     </li>
                 ))}
-
-            </ul>
-} 
-                   
+            </ul>} 
             </div>
   )
 }

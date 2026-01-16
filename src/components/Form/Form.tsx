@@ -1,8 +1,8 @@
 import "./Form.css"
 import List from '../List/List.tsx'
 import { useState } from "react"
-import { addTodo, deleteTodo } from "../../redux/slices/todoSlice.tsx"
-import { useAppDispatch, useAppSelector } from "../../redux/Hook.ts"
+import { addTodo } from "../../redux/slices/todoSlice.tsx"
+import { useAppDispatch } from "../../redux/Hook.ts"
 export default function Form() {
 
   const [text,setText] = useState('');
