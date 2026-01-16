@@ -1,18 +1,20 @@
-# React + Vite
+# React & TypeScript Practice Repo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu repository, **React** ve **TypeScript** yetkinliklerimi geliştirmek ve farklı konseptleri pratik etmek amacıyla oluşturulmuştur.
 
-Currently, two official plugins are available:
+⚠️ **Önemli:** Her bir proje veya örnek **farklı bir branch** üzerinde bulunmaktadır. Farklı örnekleri incelemek için branch değiştirmeyi unutmayın.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📂 Yapı
 
-## React Compiler
+Bu repoda tek bir ana proje yerine, her dalda (branch) izole edilmiş farklı uygulamalar/özellikler yer alır.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Örnekleri görmek ve test etmek için:
+1. Repoyu klonlayın.
+2. İlgili branch'e geçiş yapın.
 
-Note: This will impact Vite dev & build performances.
+```bash
+# Branch listesini görmek için
+git branch -a
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# İstediğiniz örneğe geçmek için
+git checkout <branch-ismi>
