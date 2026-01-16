@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 export default function useCounter() {
   // Custom Hookun State ve Fonksiyonları
-
   const [count, setCount] = useState(0);
 
   // Artırma ve Azaltma Fonksiyonları
