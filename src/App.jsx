@@ -1,6 +1,7 @@
 import './App.css'
 import AutoComplete from './component/AutoComplete'
 import Buttons from './component/Buttons'
+import Checkboxs from './component/Chekboxs'
 function App() {
 
   return (
@@ -8,6 +9,8 @@ function App() {
       <AutoComplete />
       <hr/>
       <Buttons />
+      <hr />
+      <Checkboxs />
     </>
   )
 }
