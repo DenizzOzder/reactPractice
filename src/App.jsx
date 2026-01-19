@@ -4,6 +4,7 @@ import Buttons from './component/Buttons'
 import Checkboxs from './component/Chekboxs'
 import  Card  from './component/Card'
 import Skeleton from './component/Skeleton'
+import Accordion from './component/Accordion'
 function App() {
 
   return (
@@ -17,6 +18,8 @@ function App() {
       <Card />
       <hr />
       <Skeleton />
+      <hr />
+      <Accordion />
     </>
   )
 }
