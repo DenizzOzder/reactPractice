@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Auth from "../pages/Auth";
 
-function routerConfig() {
+function RouterConfig() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -10,4 +10,4 @@ function routerConfig() {
     </Routes>
   );
 }
-export default routerConfig;
+export default RouterConfig;

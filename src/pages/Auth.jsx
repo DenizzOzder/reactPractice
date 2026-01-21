@@ -1,14 +1,20 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { toast, ToastContainer } from "react-toastify";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { toast } from "react-toastify";
 import { auth } from "../Firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function Auth() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const navigate = useNavigate();
 
+  // Register Fonksiyonu
   const Register = async () => {
     try {
       const response = await createUserWithEmailAndPassword(auth, email, pass);
@@ -20,6 +26,22 @@ export default function Auth() {
       toast.error(error.message);
     }
   };
+
+  // Login Fonksiyonu
+  const Login = async () => {
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, pass);
+      const loginUser = response.user;
+
+      if (loginUser) {
+        toast.success("Başarılı Giriş");
+        navigate("/");
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   return (
     <>
       <div className="wrapper">
@@ -41,7 +63,9 @@ export default function Auth() {
           />
         </div>
         <div className="buttonWrapper">
-          <Button variant="contained">Giriş Yap</Button>
+          <Button variant="contained" onClick={Login}>
+            Giriş Yap
+          </Button>
           <Button variant="contained" onClick={Register}>
             Kayıt Ol
           </Button>
