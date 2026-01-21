@@ -1,0 +1,25 @@
+.inputArea{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.inputArea input{
+    height: 24px;
+}
+.todoList-Area ul{
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+ul li {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+li button {
+    height: fit-content;
+    align-self: center;
+}
