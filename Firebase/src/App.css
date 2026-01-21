@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  gap: 10px;
+}
+.buttonWrapper {
+  margin: 20px;
+  display: flex;
+  gap: 15px;
+}
+input {
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid gray;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
